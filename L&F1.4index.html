@@ -173,19 +173,7 @@ Upload Image
 No image selected.
 </span>
 
-photo.addEventListener("change",()=>{
 
-if(photo.files.length){
-
-fileName.textContent=photo.files[0].name;
-
-}else{
-
-fileName.textContent="No image selected.";
-
-}
-
-});
 
 <!-- SUBMIT -->
 <div id="submit" class="hidden">
@@ -318,6 +306,19 @@ if(!confirm("Change the resolved status?")) return;
     let item = items.find(i => i.id === id);
     item.resolved = !item.resolved;
     save();
+    
+    photo.addEventListener("change",()=>{
+
+if(photo.files.length){
+
+fileName.textContent=photo.files[0].name;
+
+    }else{
+
+fileName.textContent="No image selected.";
+
+    }
+});
     renderItems();
 }
 
